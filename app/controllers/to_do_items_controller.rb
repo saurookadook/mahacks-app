@@ -13,6 +13,9 @@ class ToDoItemsController < ApplicationController
         @to_do_item = ToDoItem.new(to_do_item_params)
         if @to_do_item.valid?
             @to_do_item.user = current_user
+        else
+            flash[:message] = "There was an issue logging adding the item to your to-do list. Please make sure that both fields have at least 3 characters."
+            render :new
         end
     end
 
