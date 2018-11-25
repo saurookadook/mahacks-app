@@ -1,0 +1,6 @@
+<% if @to_do_items && current_user %>
+    <h3><%= current_user.username %>'s To-Do List</h3>
+    <%= link_to "Add a new task!", new_user_to_do_item_path(current_user) %>
+<% elsif @to_do_items %>
+    <h3>Random tasks?</h3>
+<% end %>

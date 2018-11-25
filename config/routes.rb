@@ -4,6 +4,8 @@ Rails.application.routes.draw do
     resources :to_do_items
   end
 
+  resources :to_do_items
+
   get '/signup', to: 'users#new', as: 'new_user_registration'
 
   get '/login', to: 'sessions#new', as: 'new_user_session'

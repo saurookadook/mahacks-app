@@ -1,0 +1,15 @@
+<%= form_for to_do_item do |f| %>
+    <%= f.label :task %>
+    <%= f.text_field :task %>
+
+    <br></br>
+
+    <%= f.label :description %>
+    <%= f.text_area :description %>
+
+    <br></br>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <%= f.submit class: "btn btn-light border-secondary mb-3" %>
+<% end %>
