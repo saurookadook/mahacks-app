@@ -1,5 +1,9 @@
 <% if current_user %>
-    <h3>Welcome, <%= current_user.username %>!</h3><br>
+    <div class="greeting">
+        <h3>Welcome, <%= current_user.username %>!</h3><br>
+    </div>
 <% else %>
-    <h3>Sign up to keep track of the 8 million things you want to do!</h3>
+    <div class="greeting">
+        <h3>Sign up to keep track of the 8 million things you want to do!</h3>
+    </div>
 <% end %>

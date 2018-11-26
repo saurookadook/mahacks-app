@@ -20,7 +20,13 @@
 
     <%= render partial: 'layouts/nav_links', locals: { current_user: current_user } %>
 
-    <%= yield %>
-    
+    <div id="body">
+
+      <br></br>
+      
+      <%= yield %>
+
+    </div>
+
   </body>
 </html>
