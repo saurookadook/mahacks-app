@@ -1,2 +1,15 @@
-<h4>New Task:</h4>
-<%= render partial: 'to_do_items/form', locals: { to_do_item: @to_do_item } %>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4 py-2 greeting">
+            <h4>New Task:</h4>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="row justify-content-center">
+        <div class="col-4 py-2 bg-white">
+            <%= render partial: 'to_do_items/form', locals: { to_do_item: @to_do_item } %>
+        </div>
+    </div>
+</div>
