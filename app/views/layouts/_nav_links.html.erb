@@ -1,4 +1,5 @@
 <% if current_user %>
+    <!-- TBD... -->
     <div class="container">
         <div class="row">
             <%= link_to "View your ToDos!", user_to_do_items_path(current_user) %>
@@ -8,8 +9,8 @@
 <% else %>
     <div class="container">
         <div class="row">
-            <%= link_to "Log In!", new_user_session_path %><br>
-            <%= link_to "Sign up!", new_user_registration_path %>
+            <%= link_to "All the items!", to_do_items_path %>
+            <%= link_to "Add an item", new_to_do_item_path %>
         </div>
     </div>
 <% end %>
