@@ -1,10 +1,12 @@
 class ToDoItemsController < ApplicationController
-    before_action :set_user!, :current_user
     before_action :set_to_do_item, only: [:edit, :update]
 
     def index
         @to_do_items = current_user.to_do_items
         @to_do_items ||= ToDoItem.all
+    end
+
+    def show
     end
 
     def new
