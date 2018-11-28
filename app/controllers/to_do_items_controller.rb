@@ -1,8 +1,7 @@
 class ToDoItemsController < ApplicationController
-    before_action :set_to_do_item, only: [:edit, :update]
+    before_action :set_to_do_item, only: [:show, :edit, :update]
 
     def index
-        @to_do_items = current_user.to_do_items
         @to_do_items ||= ToDoItem.all
     end
 
@@ -16,9 +15,8 @@ class ToDoItemsController < ApplicationController
     def create
         @to_do_item = ToDoItem.new(to_do_item_params)
         if @to_do_item.valid?
-            @to_do_item.user = current_user
             @to_do_item.save
-            redirect_to user_to_do_items_path(current_user)
+            redirect_to to_do_items_path
         else
             flash[:message] = "There was an issue adding the item to your to-do list. Please make sure that both fields have at least 3 characters."
             render :new
@@ -29,9 +27,20 @@ class ToDoItemsController < ApplicationController
     end
 
     def update
+        @to_do_item.update(to_do_item_params)
+        if @to_do_item.valid?
+            @to_do_item.save
+            flash[:message] = "Task ID number #{@to_do_item.id} has been successfully updated!"
+        else
+            flash[:message] = "There's been an issue updating this task. Please try again."
+            render :edit
+        end
     end
 
     def destroy
+        @to_do_item.destroy
+        flash[:message] = "Task successfully removed."
+        redirect_to :root
     end
 
     private
