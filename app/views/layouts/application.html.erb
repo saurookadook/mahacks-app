@@ -23,6 +23,18 @@
     <div id="body">
 
       <br></br>
+
+      <% if flash[:message] %>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-3 py-2 white-bubble">
+              <p><%= flash[:message] %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <br></br>
       
       <%= yield %>
 
