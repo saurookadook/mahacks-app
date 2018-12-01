@@ -1,13 +1,17 @@
-<% if @to_do_items && current_user %>
+<% if current_user %>
     <h3><%= current_user.username %>'s To-Do List</h3>
-    <% @to_do_items.each do |item| %>
-        <p>
-            <span>Task:</span> <%= item.task %> || <span>Description:</span> <%= item.description %>
-        </p>
-        <p>
-            <%= link_to "Edit", edit_user_to_do_item_path(current_user, item), class: "btn btn-light border-secondary mb-3" %> || 
-            <%= link_to 'Delete', item, class: "btn btn-light mb-3", method: :delete, data: { confirm: 'Are you sure you would like to delete your account?' } %>
-        </p>
+    <% if @to_do_items %>
+        <% @to_do_items.each do |item| %>
+            <p>
+                <span>Task:</span> <%= item.task %> || <span>Description:</span> <%= item.description %>
+            </p>
+            <p>
+                <%= link_to "Edit", edit_user_to_do_item_path(current_user, item), class: "btn btn-light border-secondary mb-3" %> || 
+                <%= link_to 'Delete', item, class: "btn btn-light mb-3", method: :delete, data: { confirm: 'Are you sure you would like to delete your account?' } %>
+            </p>
+        <% end %>
+    <% else %>
+        <h3>Empty.... :(</h3>
     <% end %>
     <%= link_to "Add a new task!", new_user_to_do_item_path(current_user) %>
 <% elsif @to_do_items %>
