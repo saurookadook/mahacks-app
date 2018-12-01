@@ -1,24 +1,30 @@
-# README
+# MAHacks IV - Ruby on Rails To-Do App README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An MVP To-Do app built with Ruby on Rails!
 
-Things you may want to cover:
+## Ruby and Rails versions
 
-* Ruby version
+The Ruby version used is 2.5.1 and Rails version is 5.2.1.
 
-* System dependencies
+## Usage
 
-* Configuration
+The app in this repo serves as an example of how to handle some basic functionality in a Ruby on Rails app:
+- Form submissions
+- User authentication
+- Proteced forms/pages using User authorization
+- Basic styling
 
-* Database creation
+## Configuration and Installation
 
-* Database initialization
+To view on a local environment, enter the following commands into terminal:
+  $ git clone https://github.com/saurookadook/mahacks-app.git
+  $ cd mahacks-app
+  $ bundle install
+  $ rake db:create
+  $ rake db:migrate
+  $ rake db:seed
+  $ rails s
 
-* How to run the test suite
+## Questions?
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+If you have any questions regarding any aspect of this app or its use, please send your questions to andrew.maskiell@upstatement.com and I will do my best to answer them!
