@@ -1,6 +1,6 @@
 class ToDoItemsController < ApplicationController
     before_action :set_user!, :current_user
-    before_action :set_to_do_item, only: [:edit, :update]
+    before_action :set_to_do_item, only: [:edit, :update, :destroy]
 
     def index
         if current_user
@@ -47,6 +47,9 @@ class ToDoItemsController < ApplicationController
     end
 
     def destroy
+        @to_do_item.destroy
+        flash[:message] = "Task deleted!"
+        redirect_to user_to_do_items_path(current_user)
     end
 
     private
