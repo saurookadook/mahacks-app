@@ -6,8 +6,10 @@ class SessionsController < ApplicationController
   
     def create
       if @user = User.find_by(username: user_params[:username])
-        if @user.authenticate(user_params[:password])
-          finalize_login(@user)
+        if @user.valid?
+          set_session(@user.id)
+          flash[:message] = "Successfully logged in!"
+          redirect_to :root
         end
       else
         render :new
@@ -19,13 +21,6 @@ class SessionsController < ApplicationController
       flash[:message] = "You have successfully logged out."
       redirect_to :root
     end
-  
-    private
-  
-    def finalize_login(user)
-      set_session(user.id)
-      flash[:message] = "Successfully logged in!"
-      redirect_to :root
-    end
+
   end
   

@@ -6,7 +6,6 @@ class UsersController < ApplicationController
     end
 
     def show
-        
     end
 
     def new
@@ -19,8 +18,7 @@ class UsersController < ApplicationController
             @user.save
             set_session(@user.id)
             flash[:message] = "Account successfully created."
-            render :root
-            # redirect_to user_path(@user)
+            redirect_to :root
         else
             render :new
         end
