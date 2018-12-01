@@ -18,7 +18,7 @@ class UsersController < ApplicationController
             @user.save
             set_session(@user.id)
             flash[:message] = "Account successfully created."
-            render :root
+            redirect_to :root
         else
             render :new
         end
