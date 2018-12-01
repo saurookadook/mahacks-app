@@ -9,9 +9,7 @@ class ApplicationController < ActionController::Base
     protected
 
     def set_user!
-        if params[:id]
-            @user = User.find(params[:id])
-        elsif params[:user_id]
+        if params[:user_id]
             @user = User.find(params[:user_id])
         end
     end
