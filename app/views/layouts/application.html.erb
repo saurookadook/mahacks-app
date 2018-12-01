@@ -14,6 +14,10 @@
 
     <%= render partial: 'layouts/nav_links', locals: { current_user: current_user } %>
 
+    <% if flash[:message] %>
+      <p><%= flash[:message] %></p>
+    <% end %>
+
     <%= yield %>
     
   </body>
