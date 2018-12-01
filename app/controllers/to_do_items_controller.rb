@@ -3,12 +3,20 @@ class ToDoItemsController < ApplicationController
     before_action :set_to_do_item, only: [:edit, :update]
 
     def index
-        @to_do_items = current_user.to_do_items
-        @to_do_items ||= ToDoItem.all
+        if current_user
+            @to_do_items = current_user.to_do_items
+            @to_do_items ||= ToDoItem.all
+        else
+            redirect_to new_user_registration_path
+        end
     end
 
     def new
-        @to_do_item = ToDoItem.new
+        if current_user
+            @to_do_item = ToDoItem.new
+        else
+            redirect_to new_user_registration_path
+        end 
     end
 
     def create
