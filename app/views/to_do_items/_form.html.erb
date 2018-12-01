@@ -1,10 +1,10 @@
 <%= form_for to_do_item do |f| %>
-    <%= f.label :task %>
+    <%= f.label :task, class: "pt-3" %>
     <%= f.text_field :task %>
 
     <br></br>
 
-    <%= f.label :description %>
+    <%= f.label :description %><br>
     <%= f.text_area :description %>
 
     <br></br>

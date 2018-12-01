@@ -14,6 +14,16 @@
  *= require_self
  */
 
+div.jumbotron {
+    margin-bottom: 0;   
+}
+
+a.nav-link {
+    color: white;
+}
+
+ @import 'bootstrap';
+
  body {
      text-align: center;
  }
@@ -21,3 +31,24 @@
  span {
      font-weight: bold;
  }
+
+ div#body {
+     background: url("/body/IMG_1177.jpg") no-repeat center center;
+     background-size: cover;
+     height: 1000px;
+     width: 100%;
+ }
+
+ div.skinny-nav {
+     background: #007bff;
+ }
+
+ div.blue-bubble {
+     background: #007bff;
+     border-radius: 5px;
+ }
+
+ div.white-bubble {
+    background: white;
+    border-radius: 5px;
+}

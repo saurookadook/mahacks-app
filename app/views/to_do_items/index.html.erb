@@ -1,11 +1,26 @@
-<% if @to_do_items && current_user %>
-    <h3><%= current_user.username %>'s To-Do List</h3>
-    <% @to_do_items.each do |item| %>
-        <p>
-            <span>Task:</span> <%= item.task %> || <span>Description:</span> <%= item.description %>
-        </p>
-    <% end %>
-    <%= link_to "Add a new task!", new_user_to_do_item_path(current_user) %>
+<% if current_user %>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-4 py-2 blue-bubble">
+                <h3><%= current_user.username %>'s To-Do List</h3>
+            </div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-6 py-2 tasks">
+                <% if @to_do_items %>
+                    <% @to_do_items.each do |item| %>
+                        <p class="bg-white p-2">
+                            <span>Task:</span> <%= item.task %> || <span>Description:</span> <%= item.description %>
+                        </p>
+                    <% end %>
+                <% end %>
+            </div>
+        </div>
+    </div>
+    <%= link_to "Add a new task!", new_user_to_do_item_path(current_user), class: "btn btn-light border-secondary pt-2" %>
 <% elsif @to_do_items %>
     <h3>Random tasks?</h3>
+<% else %>
+    <h3>Empty...</h3>
 <% end %>

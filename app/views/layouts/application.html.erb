@@ -10,11 +10,35 @@
   </head>
 
   <body>
-    <h1>MAHacks ToDo App</h1>
+    <div class="jumbotron">
+      <h1 class="display-4">MAHacks ToDo App</h1>
+      <p class="lead">Yay for <a href="http://getbootstrap.com/docs/4.1">Bootstrap!</a></p>
+      <hr class="my-4">
+      <p>By including the <a href="https://rubygems.org/gems/bootstrap/versions/4.0.0">bootstrap gem</a>, adding layouts like this takes seconds.</p>
+      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </div>
 
     <%= render partial: 'layouts/nav_links', locals: { current_user: current_user } %>
 
-    <%= yield %>
-    
+    <div id="body">
+
+      <br></br>
+
+      <% if flash[:message] %>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-3 py-2 white-bubble">
+              <p><%= flash[:message] %></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <br></br>
+      
+      <%= yield %>
+
+    </div>
+
   </body>
 </html>
