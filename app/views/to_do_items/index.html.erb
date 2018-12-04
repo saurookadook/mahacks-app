@@ -13,6 +13,10 @@
                         <p class="bg-white p-2">
                             <span>Task:</span> <%= item.task %> || <span>Description:</span> <%= item.description %>
                         </p>
+                        <p>
+                            <%= link_to "Edit", edit_user_to_do_item_path(current_user, item), class: "btn btn-light border-secondary mb-3" %> || 
+                            <%= link_to 'Delete', item, class: "btn btn-light mb-3", method: :delete, data: { confirm: 'Are you sure you would like to delete your account?' } %>
+                        </p>
                     <% end %>
                 <% else %>
                     <h3>Empty.... :(</h3>
