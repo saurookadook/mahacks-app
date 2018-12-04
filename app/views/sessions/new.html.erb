@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-4 py-2 blue-bubble">
+            <h2>Log In</h2>
+
+            <%= form_for @user, url: login_path do |f| %>
+                <div class="log-in-form">
+                    <%= f.label :username %>:
+                    <%= f.text_field :username %><br>
+
+                    <%= f.label :password %>:
+                    <%= f.password_field :password %><br>
+
+                    <%= f.submit class: "btn btn-light border-secondary mb-3" %>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>

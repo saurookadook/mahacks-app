@@ -17,6 +17,7 @@ The app in this repo serves as an example of how to handle some basic functional
 ## Configuration and Installation
 
 To view on a local environment, enter the following commands into terminal:
+
   $ git clone https://github.com/saurookadook/mahacks-app.git
   $ cd mahacks-app
   $ bundle install
